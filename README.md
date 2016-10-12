@@ -29,7 +29,7 @@ define([], function() {
 
 ```
 
-3. Profit! Here is a debugger example using the
+Profit! Here is a debugger example using the library
 
 ```js
 require(['N/https', '/SuiteScripts/oauth', '/SuiteScripts/secret'], function(https, oauth, secret) {
