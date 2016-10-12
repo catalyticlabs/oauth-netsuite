@@ -384,7 +384,6 @@ var auth = OAuth({
 });
 
 function getHeaders(options) {
-// function getHeaders(url, method, data, token_key, token_secret) {
     options.data = typeof options.data === 'undefined' ? {} : options.data;
 
     var queryParams = getQueryParams(options.url);
@@ -403,7 +402,10 @@ function getHeaders(options) {
 }
 
     return {
-        'getHeaders': getHeaders
+        getHeaders: getHeaders,
+        OAuth: OAuth,
+        sha1: hash_function_sha1,
+        sha256: hash_function_sha256
     }
 
 });

@@ -72,3 +72,5 @@ oauth = {
 ```
 
 See the OAuth 1.0a or CryptoJS documentation for more information about those methods.
+
+Hopefully more documentation and type annotations coming soon!
