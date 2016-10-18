@@ -75,7 +75,7 @@ require(['N/https', '/SuiteScripts/oauth', '/SuiteScripts/secret'], function(htt
 
     headers['Content-Type'] = 'application/json';
 
-    var restResponse = https.get({
+    var restResponse = https.put({
         url: url,
         headers: headers,
         body: JSON.stringify(body)
