@@ -384,15 +384,14 @@ var auth = OAuth({
 });
 
 function getHeaders(options) {
-    options.data = typeof options.data === 'undefined' ? {} : options.data;
-
-    var queryParams = getQueryParams(options.url);
-    util.extend(options.data, queryParams);
+    if (options.method.toUpperCase() === 'GET') {
+        var data = getQueryParams(options.url);
+    }
 
     var requestData = {
         url: options.url,
         method: options.method,
-        data: options.data
+        data: data
     };
     var token = {
         key: options.tokenKey,

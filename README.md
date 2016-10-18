@@ -41,7 +41,6 @@ require(['N/https', '/SuiteScripts/oauth', '/SuiteScripts/secret'], function(htt
         method: method,
         tokenKey: secret.token.public,
         tokenSecret: secret.token.secret
-        // data: {}    // Not used here for a GET request
     });
 
     headers['Content-Type'] = 'application/json';
@@ -55,6 +54,38 @@ require(['N/https', '/SuiteScripts/oauth', '/SuiteScripts/secret'], function(htt
 
 });
 ```
+
+And here is a PUT example:
+```js
+require(['N/https', '/SuiteScripts/oauth', '/SuiteScripts/secret'], function(https, oauth, secret) {
+
+    var url = 'https://rest.sandbox.netsuite.com/app/site/hosting/restlet.nl?script=123&deploy=1';
+    var method = 'PUT';
+    var headers = oauth.getHeaders({
+        url: url,
+        method: method,
+        tokenKey: secret.token.public,
+        tokenSecret: secret.token.secret
+    });
+
+    var body = {
+        datum1: 'datum1',
+        datum2: 'foobar'
+    }
+
+    headers['Content-Type'] = 'application/json';
+
+    var restResponse = https.get({
+        url: url,
+        headers: headers,
+        body: JSON.stringify(body)
+    });
+    log.debug('response', JSON.stringify(restResponse));
+    log.debug('headers', headers);
+
+});
+```
+*NOTE*: You do not need to add the Body to the OAuth constructor.
 
 By default, the oauth library comes with a wrapper function ``getHeaders`` using CryptoJS's SHA256 encryption.
 ``getHeaders`` will extract your Query params automatically. Be sure to add any PUT/POST params to ``options.data`` though.
