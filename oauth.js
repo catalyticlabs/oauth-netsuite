@@ -1,4 +1,8 @@
-define(['N/util', './cryptojs', './secret'], function(util, cryptojs, secret) {
+/* eslint-disable */
+'use strict';
+const cryptojs = require("crypto-js");
+
+module.exports.oauth = function (secret) {
     /**
      * Constructor
      * @param {Object} opts consumer key and secret
@@ -374,16 +378,16 @@ function hash_function_sha256(base_string, key) {
 }
 
 var auth = OAuth({
-    realm: secret.realm,
+    realm: secret.consumerRealm,
     consumer: {
-        key: secret.consumer.public,
-        secret: secret.consumer.secret
+        key: secret.consumerPublic,
+        secret: secret.consumerSecret
     },
     signature_method: 'HMAC-SHA256',
     hash_function: hash_function_sha256
 });
 
-function getHeaders(options) {
+function getHeaders (options) {
     if (options.method.toUpperCase() === 'GET') {
         var data = getQueryParams(options.url);
     }
@@ -406,5 +410,4 @@ function getHeaders(options) {
         sha1: hash_function_sha1,
         sha256: hash_function_sha256
     }
-
-});
+}
