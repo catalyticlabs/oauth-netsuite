@@ -1,0 +1,25 @@
+{
+  "name": "@catalytic/oauth-netsuite",
+  "version": "2.0.0",
+  "description": "OAuth 1.0a Wrapper for Use with NetSuite's Suitescript 2.0",
+  "main": "oauth.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/catalyticlabs/oauth-netsuite.git"
+  },
+  "keywords": [
+    "Pushbot",
+    "Catalytic",
+    "Netsuite",
+    "Oauth"
+  ],
+  "author": "Mark Keaton",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/catalyticlabs/oauth-netsuite/issues"
+  },
+  "homepage": "https://github.com/catalyticlabs/oauth-netsuite",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1"
+  }
+}
