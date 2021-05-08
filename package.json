@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/catalyticlabs/oauth-netsuite",
   "dependencies": {
-    "crypto-js": "^3.1.9-1"
+    "crypto-js": "^4.0.0"
   }
 }
