@@ -19,6 +19,14 @@
     "url": "https://github.com/catalyticlabs/oauth-netsuite/issues"
   },
   "homepage": "https://github.com/catalyticlabs/oauth-netsuite",
+  "files": [
+    "oauth.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.cloudsmith.io/pagerduty/npm/"
+  },
   "dependencies": {
     "crypto-js": "^4.2.0"
   }
