@@ -1,0 +1,20 @@
+# Cloudsmith Registry Configuration
+# Copy this file to .npmrc and set CLOUDSMITH_TOKEN environment variable
+#
+# To get your token:
+# 1. Go to https://cloudsmith.io/user/settings/api/
+# 2. Create a new API key with read permissions
+# 3. Set the environment variable:
+#    export CLOUDSMITH_TOKEN="your-token-here"
+#
+# Or add to your ~/.bashrc or ~/.zshrc:
+#    echo 'export CLOUDSMITH_TOKEN="your-token-here"' >> ~/.zshrc
+
+registry=https://npm.cloudsmith.io/pagerduty/npm/
+
+@catalytic:registry=https://npm.cloudsmith.io/pagerduty/npm/
+
+//npm.cloudsmith.io/pagerduty/npm/:_authToken=${CLOUDSMITH_TOKEN}
+
+always-auth=true
+
